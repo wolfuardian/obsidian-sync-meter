@@ -1,0 +1,9 @@
+{
+	"id": "sync-meter",
+	"name": "Sync Meter",
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0",
+	"description": "Show real-time Obsidian Sync progress percentage in the status bar",
+	"author": "EOS",
+	"isDesktopOnly": false
+}

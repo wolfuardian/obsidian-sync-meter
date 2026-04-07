@@ -1,0 +1,68 @@
+/* Sync Meter Styles */
+
+.sync-meter-status {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	cursor: default;
+}
+
+.sync-meter-icon {
+	display: flex;
+	align-items: center;
+	--icon-size: 14px;
+}
+
+.sync-meter-text {
+	font-size: 11px;
+	font-variant-numeric: tabular-nums;
+	min-width: 2em;
+}
+
+/* Progress bar */
+.sync-meter-bar-track {
+	width: 40px;
+	height: 3px;
+	background: var(--background-modifier-border);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.sync-meter-bar-fill {
+	height: 100%;
+	background: var(--text-accent);
+	border-radius: 2px;
+	transition: width 0.5s ease;
+}
+
+.sync-meter-bar-indeterminate {
+	width: 40%;
+	animation: sync-meter-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes sync-meter-slide {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(350%); }
+}
+
+/* State: done */
+.sync-meter-done .sync-meter-icon,
+.sync-meter-done .sync-meter-text {
+	color: var(--text-faint);
+}
+
+/* State: syncing */
+.sync-meter-syncing .sync-meter-icon {
+	color: var(--text-accent);
+}
+
+.sync-meter-syncing .sync-meter-text {
+	color: var(--text-normal);
+}
+
+/* State: off (Sync 未啟用) */
+.sync-meter-off .sync-meter-icon,
+.sync-meter-off .sync-meter-text {
+	color: var(--text-faint);
+	opacity: 0.4;
+}
